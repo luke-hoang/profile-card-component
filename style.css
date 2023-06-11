@@ -2,34 +2,22 @@
 
 body {
   background-color: hsl(185, 75%, 39%);
-  background-image: 
-    url("./images/bg-pattern-top.svg"),
-    url("./images/bg-pattern-bottom.svg");
-  background-repeat:
-    no-repeat,
-    no-repeat;
 }
 
-@media screen and (orientation: landscape) {
-  body {
-    background-size:
-      70vw,
-      70vw;
-    background-position:
-      left -15vw top -40vw,
-      right -15vw bottom -40vw;
-  }
+.bg-pattern-top {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: translate(calc(100vw / 2 - 978px), calc(100vh/-2));
 }
 
-@media screen and (orientation: portrait) {
-  body {
-    background-size:
-      100vh,
-      100vh;
-    background-position:
-      left -70vh top -50vh,
-      right -70vh bottom -50vh;
-  }
+.bg-pattern-bottom {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(calc(100vw/2), calc(100vh/2));
 }
 
 .container {
@@ -40,6 +28,7 @@ body {
 }
 
 .card {
+  z-index: 3;
   min-width: 350px;
   min-height: 380px;
   position: relative;
